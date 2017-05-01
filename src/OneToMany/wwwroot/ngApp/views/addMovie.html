@@ -1,0 +1,16 @@
+﻿<form ng-submit="controller.addMovie()">
+    <label>Title</label>
+    <input type="text" placeholder="Insert title here..." ng-model="controller.movie.title" />
+
+    <label>Director</label>
+    <input type="text" placeholder="Insert director here..." ng-model="controller.movie.director" />
+
+    <label>
+        Select a Genre
+    </label>
+    <select ng-model="controller.movie.genreId">
+        <option ng-repeat="genre in controller.genres" value="{{genre.id}}">{{genre.name}}</option>
+    </select>
+    <p>This is the genre with id: {{controller.movie.genreId}}</p>
+    <input type="submit" class="btn btn-primary" value="Add Movie" />
+</form>

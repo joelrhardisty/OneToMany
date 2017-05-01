@@ -1,0 +1,29 @@
+<h2>Home</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Director</th>
+            <th>Delete Movie</th>
+            <th>Edit Movie</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="movie in controller.movies">
+            <td>
+                <a ui-sref="about({id: movie.id})">
+                    {{movie.title}}
+                </a>
+            </td>
+            <td>
+                {{movie.director}}
+            </td>
+            <td>
+                <button class="btn-danger" ng-click="controller.deleteMovie(movie.id)">Delete</button>
+            </td>
+            <td>
+                <a ui-sref="editMovie({id: movie.id})" class="btn btn-warning">Edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
